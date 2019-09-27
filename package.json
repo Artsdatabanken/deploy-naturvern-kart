@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lastejobb": "^1.23.1"
+    "lastejobb": "^2.7.3"
   }
 }
