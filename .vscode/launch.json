@@ -8,8 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${file}",
-      "program2": "${workspaceFolder}/script/02_deploy_kart.js"
+      "program": "${file}"
     }
   ]
 }

@@ -6,9 +6,10 @@ function lastMeta() {
   const meta = io.lesDatafil("meta.json");
   return json.arrayToObject(meta.items, { uniqueKey: "kodeautor" });
 }
+
 function lastVV() {
   const meta = io.lesDatafil("vv.json");
-  return json.arrayToObject(meta.data, { uniqueKey: "kode" });
+  return json.arrayToObject(meta.items, { uniqueKey: "kode" });
 }
 
 const vv = lastVV();
