@@ -11,6 +11,6 @@ http.downloadJson(
 );
 
 http.downloadJson(
-  "https://raw.githubusercontent.com/Artsdatabanken/naturvern/master/naturvernområde.json",
+  "https://raw.githubusercontent.com/Artsdatabanken/naturvern/master/type.json",
   "naturvernområde.json"
 );
