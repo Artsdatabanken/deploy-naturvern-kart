@@ -1,4 +1,4 @@
-const { io, json } = require("lastejobb");
+const { io, log, json } = require("lastejobb");
 const path = require("path");
 const fs = require("fs");
 
@@ -23,11 +23,12 @@ features.forEach(feature => {
   kart.features = [feature];
   const props = feature.properties;
   const mk = meta[props.id];
-  kart.name = mk.navn.nob;
+  if (!mk) return log.error("Mangler meta for " + props.id);
+  kart.name = mk.tittel.nob;
   feature.properties = Object.assign({}, props, mk);
   const vv1 = vv[mk.kode];
   const dir = path.join("build", vv1.url);
   fs.mkdirSync(dir, { recursive: true });
-  const fn = path.join(dir, "polygon.32633.geojson");
-  fs.writeFileSync(fn, JSON.stringify(kart));
+  const fn = path.join("." + vv1.url, "polygon.32633.geojson");
+  io.skrivBuildfil(fn, kart);
 });
