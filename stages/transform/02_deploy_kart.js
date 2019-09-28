@@ -2,18 +2,18 @@ const { io, json } = require("lastejobb");
 const path = require("path");
 const fs = require("fs");
 
-function lastMeta() {
-  const meta = io.lesDatafil("meta.json");
+function lastNaturvernMeta() {
+  const meta = io.lesDatafil("naturvernområde.json");
   return json.arrayToObject(meta.items, { uniqueKey: "kodeautor" });
 }
 
-function lastVV() {
-  const meta = io.lesDatafil("vv.json");
+function lastMetaMedUndertyper() {
+  const meta = io.lesDatafil("metadata_med_undertyper.json");
   return json.arrayToObject(meta.items, { uniqueKey: "kode" });
 }
 
-const vv = lastVV();
-const meta = lastMeta();
+const vv = lastMetaMedUndertyper();
+const meta = lastNaturvernMeta();
 const kart = io.lesDatafil("kart.json");
 delete kart.$schema;
 
