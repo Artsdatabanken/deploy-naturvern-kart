@@ -6,7 +6,7 @@ http.downloadJson(
 );
 
 http.downloadJson(
-  "https://github.com/Artsdatabanken/naturvern-kart/raw/master/naturvernområde_25833.geojson",
+  "https://github.com/Artsdatabanken/naturvern-kart/raw/master/polygon.25833.geojson",
   "kart.json"
 );
 
